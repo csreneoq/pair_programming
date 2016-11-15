@@ -17,23 +17,23 @@ function sumArrayElem(array = []) {
 describe('EvenArray', function () {
   EvenArray = require('../lib/even_array.js');
   it('return [] if nil is given', function() {
-    expect(EvenArray()).toMatch([]);
+    expect(EvenArray()).toEqual([]);
   });
 
   it('return [] if an empty array is given',function() {
-    expect(EvenArray([])).toMatch([]);
+    expect(EvenArray([])).toEqual([]);
   });
 
   it('return [] if [1] is given', function() {
-    expect(EvenArray([1])).toMatch([]);
+    expect(EvenArray([1])).toEqual([]);
   });
 
   it('return [2] if [2] is given', function() {
-    expect(EvenArray([2])).toMatch([2]);
+    expect(EvenArray([2])).toEqual([2]);
   });
 
   it('return [2] if [1,2] is given', function() {
-    expect(EvenArray([1,2])).toMatch([2]);
+    expect(EvenArray([1,2])).toEqual([2]);
   });
 
   it('return array only with even elements', function() {
@@ -43,23 +43,23 @@ describe('EvenArray', function () {
     nElem = 10;
     randArray = generateRandomArray(nElem);
     evenArray = EvenArray(randArray);
-    sumEvenArray = sumArrayElem(evenArray);
-    expect(sumArrayElem % 2).toBe(0);
+    sum  = sumArrayElem(evenArray);
+    expect(sum % 2).toBe(0);
 
     // Test with 100 elements.
     nElem = 100;
     randArray = generateRandomArray(nElem);
     randArray = generateRandomArray(nElem);
     evenArray = EvenArray(randArray);
-    sumEvenArray = sumArrayElem(evenArray);
-    expect(sumArrayElem % 2).toBe(0);
+    sum = sumArrayElem(evenArray);
+    expect(sum % 2).toBe(0);
 
     // Test with 1000 elements.
     nElem = 1000;
     randArray = generateRandomArray(nElem);
     randArray = generateRandomArray(nElem);
     evenArray = EvenArray(randArray);
-    sumEvenArray = sumArrayElem(evenArray);
-    expect(sumArrayElem % 2).toBe(0);
+    sum = sumArrayElem(evenArray);
+    expect(sum % 2).toBe(0);
   });
 })

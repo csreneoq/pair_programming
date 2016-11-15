@@ -1,8 +1,8 @@
-function EvenArray(array){
-    var answer = new Array[];
-	if (array.length()!=0){
+function EvenArray(array = []){
+   var answer = [];
+	if (array.length!=0){
 	
-	    for (int i =0; i<array.length();i++){
+	    for (var i =0; i< array.length ;i++){
 	        if (array[i]%2 == 0) {
 	           answer.push(array[i]);
 	        }
